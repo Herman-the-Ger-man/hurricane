@@ -32,9 +32,9 @@ def convert_damages_data(damages):
     for damage in damages:
         if damage == "Damages not recorded":
             updated_damages.append(damage)
-        if damage.find("M") != -1:
+        if "M" in damage:
             updated_damages.append(float(damage[0:damage.find("M")])*conversion["M"])
-        if damage.find("B") != -1:
+        if "B" in damage:
             updated_damages.append(float(damage[0:damage.find("B")])*conversion["B"])
     
     return updated_damages
